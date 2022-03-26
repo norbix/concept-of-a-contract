@@ -4,7 +4,7 @@
 
 ## General info
 
-Demonstrates how to transfer state between stacks/runtimes without common cache by using env vars and the closure feature.
+Demonstrates how to transfer state between stacks/runtimes without common cache by using env vars and the closure capabilities available in modern envs.
 
 ### Structure 
 
