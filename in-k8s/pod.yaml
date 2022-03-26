@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    kubernetes.io/psp: eks.privileged
+  labels:
+    run: norbix-repl
+  name: norbix-repl
+  namespace: default
+spec:
+  containers:
+    -                                                                                                                   #HINT: closure
+      env:
+        - name: NORBIX_SEMVER
+          valueFrom:
+            secretKeyRef:
+              name: norbix-semver
+              key: NORBIX_SEMVER
+      image: busybox
+      name: norbix-repl
+      stdin: true
+      stdinOnce: true
+      tty: true
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  serviceAccountName: default
