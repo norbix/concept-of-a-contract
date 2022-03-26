@@ -1,4 +1,4 @@
-# Demo inside bash runtime
+# Demo inside docker runtime
 
 * Contract vars:
     * NORBIX_SEMVER
