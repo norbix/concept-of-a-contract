@@ -6,43 +6,43 @@ Contract is consumed by using secrets object within K8s.
     * NORBIX_SEMVER
 
 ```shell 
-norbix@norbix-laptop1-lin20 ~/Desktop/corpo/codebases/priv/concept-of-a-contract/in-k8s (main) kubectx
+norbix@norbix-laptop1-lin20 ~ (main) kubectx
 core
 core-staging
-norbix@norbix-laptop1-lin20 ~/Desktop/corpo/codebases/priv/concept-of-a-contract/in-k8s (main)
-norbix@norbix-laptop1-lin20 ~/Desktop/corpo/codebases/priv/concept-of-a-contract/in-k8s (main)
-norbix@norbix-laptop1-lin20 ~/Desktop/corpo/codebases/priv/concept-of-a-contract/in-k8s (main)
-norbix@norbix-laptop1-lin20 ~/Desktop/corpo/codebases/priv/concept-of-a-contract/in-k8s (main) kubens default 
-norbix@norbix-laptop1-lin20 ~/Desktop/corpo/codebases/priv/concept-of-a-contract/in-k8s (main) kubens
-norbix@norbix-laptop1-lin20 ~/Desktop/corpo/codebases/priv/concept-of-a-contract/in-k8s (main) k create secret generic norbix-semver --from-env-file=.env 
-norbix@norbix-laptop1-lin20 ~/Desktop/corpo/codebases/priv/concept-of-a-contract/in-k8s (main) k get secrets |grep -i norbix
+norbix@norbix-laptop1-lin20 ~ (main)
+norbix@norbix-laptop1-lin20 ~ (main)
+norbix@norbix-laptop1-lin20 ~ (main)
+norbix@norbix-laptop1-lin20 ~ (main) kubens default 
+norbix@norbix-laptop1-lin20 ~ (main) kubens
+norbix@norbix-laptop1-lin20 ~ (main) k create secret generic norbix-semver --from-env-file=.env 
+norbix@norbix-laptop1-lin20 ~ (main) k get secrets |grep -i norbix
 norbix-semver                  Opaque                                1      19s
-norbix@norbix-laptop1-lin20 ~/Desktop/corpo/codebases/priv/concept-of-a-contract/in-k8s (main)
-norbix@norbix-laptop1-lin20 ~/Desktop/corpo/codebases/priv/concept-of-a-contract/in-k8s (main)
-norbix@norbix-laptop1-lin20 ~/Desktop/corpo/codebases/priv/concept-of-a-contract/in-k8s (main)
-norbix@norbix-laptop1-lin20 ~/Desktop/corpo/codebases/priv/concept-of-a-contract/in-k8s (main) k get secrets/norbix-semver -o jsonpath='{.data}';echo
+norbix@norbix-laptop1-lin20 ~ (main)
+norbix@norbix-laptop1-lin20 ~ (main)
+norbix@norbix-laptop1-lin20 ~ (main)
+norbix@norbix-laptop1-lin20 ~ (main) k get secrets/norbix-semver -o jsonpath='{.data}';echo
 map[NORBIX_SEMVER:J3YwLjEuMCc=]
-norbix@norbix-laptop1-lin20 ~/Desktop/corpo/codebases/priv/concept-of-a-contract/in-k8s (main)
-norbix@norbix-laptop1-lin20 ~/Desktop/corpo/codebases/priv/concept-of-a-contract/in-k8s (main)
-norbix@norbix-laptop1-lin20 ~/Desktop/corpo/codebases/priv/concept-of-a-contract/in-k8s (main)
-norbix@norbix-laptop1-lin20 ~/Desktop/corpo/codebases/priv/concept-of-a-contract/in-k8s (main) k get secrets/norbix-semver -o jsonpath='{.data.NORBIX_SEMVER}'| base64 --decode;echo 
+norbix@norbix-laptop1-lin20 ~ (main)
+norbix@norbix-laptop1-lin20 ~ (main)
+norbix@norbix-laptop1-lin20 ~ (main)
+norbix@norbix-laptop1-lin20 ~ (main) k get secrets/norbix-semver -o jsonpath='{.data.NORBIX_SEMVER}'| base64 --decode;echo 
 'v0.1.0'
-norbix@norbix-laptop1-lin20 ~/Desktop/corpo/codebases/priv/concept-of-a-contract/in-k8s (main) k apply -f ./pod.yaml 
+norbix@norbix-laptop1-lin20 ~ (main) k apply -f ./pod.yaml 
 
 
-norbix@norbix-laptop1-lin20 ~/Desktop/corpo/codebases/priv/concept-of-a-contract/in-k8s (main) k run -it --image=busybox norbix-repl
+norbix@norbix-laptop1-lin20 ~ (main) k run -it --image=busybox norbix-repl
 If you don't see a command prompt, try pressing enter.
 / # 
 Session ended, resume using 'kubectl attach norbix-repl -c norbix-repl -i -t' command when the pod is running
-norbix@norbix-laptop1-lin20 ~/Desktop/corpo/codebases/priv/concept-of-a-contract/in-k8s (main)
-norbix@norbix-laptop1-lin20 ~/Desktop/corpo/codebases/priv/concept-of-a-contract/in-k8s (main)
-norbix@norbix-laptop1-lin20 ~/Desktop/corpo/codebases/priv/concept-of-a-contract/in-k8s (main)
-norbix@norbix-laptop1-lin20 ~/Desktop/corpo/codebases/priv/concept-of-a-contract/in-k8s (main) k get pods |grep -i repl
+norbix@norbix-laptop1-lin20 ~ (main)
+norbix@norbix-laptop1-lin20 ~ (main)
+norbix@norbix-laptop1-lin20 ~ (main)
+norbix@norbix-laptop1-lin20 ~ (main) k get pods |grep -i repl
 norbix-repl                                  1/1     Running   1          27s
-norbix@norbix-laptop1-lin20 ~/Desktop/corpo/codebases/priv/concept-of-a-contract/in-k8s (main)
-norbix@norbix-laptop1-lin20 ~/Desktop/corpo/codebases/priv/concept-of-a-contract/in-k8s (main)
-norbix@norbix-laptop1-lin20 ~/Desktop/corpo/codebases/priv/concept-of-a-contract/in-k8s (main)
-norbix@norbix-laptop1-lin20 ~/Desktop/corpo/codebases/priv/concept-of-a-contract/in-k8s (main) k exec -it norbix-repl sh
+norbix@norbix-laptop1-lin20 ~ (main)
+norbix@norbix-laptop1-lin20 ~ (main)
+norbix@norbix-laptop1-lin20 ~ (main)
+norbix@norbix-laptop1-lin20 ~ (main) k exec -it norbix-repl sh
 kubectl exec [POD] [COMMAND] is DEPRECATED and will be removed in a future version. Use kubectl kubectl exec [POD] -- [COMMAND] instead.
 / #
 / #  
@@ -59,5 +59,5 @@ NORBIX_SEMVER='v0.1.0'
 ^C
 / # 
 command terminated with exit code 130
-norbix@norbix-laptop1-lin20 ~/Desktop/corpo/codebases/priv/concept-of-a-contract/in-k8s (main)
+norbix@norbix-laptop1-lin20 ~ (main)
 ```
