@@ -1,0 +1,7 @@
+description: 'config file'
+
+env: 'prod'
+
+version: 'v0.1.0'
+
+componentName: 'in-golang'
