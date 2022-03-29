@@ -11,6 +11,8 @@ Demonstrates how to transfer state between stacks/runtimes without common cache 
 ```shell 
 norbix@norbix-laptop1-lin20 ~/Desktop/corpo/codebases/priv/concept-of-a-contract (main) $ tree -L 7 ./
 ./
+├── assets
+│   └── contract.jpeg
 ├── in-bash
 │   ├── main.sh
 │   └── README.md
@@ -19,7 +21,12 @@ norbix@norbix-laptop1-lin20 ~/Desktop/corpo/codebases/priv/concept-of-a-contract
 │   ├── Dockerfile
 │   └── README.md
 ├── in-golang
-│   └── README.md.dist
+│   ├── config.yaml
+│   ├── dev.env
+│   ├── go.mod
+│   ├── go.sum
+│   ├── main.go
+│   └── README.md
 ├── in-jvm
 │   └── README.md.dist
 ├── in-k8s
@@ -28,7 +35,7 @@ norbix@norbix-laptop1-lin20 ~/Desktop/corpo/codebases/priv/concept-of-a-contract
 ├── LICENSE
 └── README.md
 
-5 directories, 11 files
+6 directories, 17 files
 norbix@norbix-laptop1-lin20 ~/Desktop/corpo/codebases/priv/concept-of-a-contract (main) $ 
 ```
 
