@@ -63,29 +63,15 @@ func main() {
 		configMapFromEnv["version"] = os.ExpandEnv("${NORBIX_SEMVER}")
 	}
 
-	//configMapFromEnv := map[string]string{
-	//	"env":     os.ExpandEnv("${NORBIX_ENV}"),
-	//	"version": os.ExpandEnv("${NORBIX_SEMVER}"),
-	//}
-
-	//fmt.Println(configMap)
-	//fmt.Println(configMapFromEnv)
-	//fmt.Println(config)
-
 	//HINT: union maps
 	for k, v := range configMapFromEnv {
 		configMap[k] = v
 	}
 
-	//fmt.Println("==")
-	//fmt.Println(configMap)
-	//fmt.Println(configMapFromEnv)
-
 	err = mapstructure.Decode(configMap, &config)
 	if err != nil {
 		panic(err)
 	}
-	//fmt.Println(config)
 
 	//NOTE: hack for daemon thread
 	for {
