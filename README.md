@@ -40,5 +40,4 @@ norbix@norbix-laptop1-lin20 ~/Desktop/corpo/codebases/priv/concept-of-a-contract
 - **assets/** contains graphical files for the frontend stuff ;) 
 
 # TODO:
-- in-golang demo
 - in-jvm demo
